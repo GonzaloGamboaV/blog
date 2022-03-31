@@ -28,3 +28,10 @@ module.exports.displayArticle = async function(req, res) {
     });
     res.render('articles/view', {article});
 };
+
+module.exports.displayAll = async function (req, res) {
+    const articles = await Article.findAll({
+        include:["author"]
+    });
+    res.render('articles/viewALl', {articles});
+}
