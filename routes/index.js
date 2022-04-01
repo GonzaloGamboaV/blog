@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/article/add', articleController.renderAddForm);
 router.post('/article/add', articleController.addArticle);
-
+router.get('/article/:articleId/edit', articleController.renderEditForm());
 router.get('/article/:articleId', articleController.displayArticle);
 router.get('/article/', articleController.displayAll);
 module.exports = router;

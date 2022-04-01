@@ -35,3 +35,8 @@ module.exports.displayAll = async function (req, res) {
     });
     res.render('articles/viewALl', {articles});
 }
+
+module.exports.renderEditForm = async function(req, res){
+    const article = await Article.findByPk(req.params.articleId);
+    res.render('articles/edit', {article});
+}
